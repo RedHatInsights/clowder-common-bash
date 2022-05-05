@@ -1,8 +1,8 @@
-name: "CI"
+name: "Tests"
 on: [push, pull_request]
 jobs:
   build:
-    name: build
+    name: tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
