@@ -1,0 +1,12 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@1.1.0
