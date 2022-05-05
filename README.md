@@ -18,7 +18,7 @@ Usage
 To access the different configuration, load the `clowder-config-main` file in your shell
 
 ```
-curl -o https://raw.githubusercontent.com/Victoremepunto/clowder-common-bash/master/clowder-config-main >> clowder-config-main && source clowder-config-main
+curl https://raw.githubusercontent.com/Victoremepunto/clowder-common-bash/master/src/clowder-config-main.sh -o clowder-config-main.sh && source clowder-config-main.sh
 ```
 
 Then try and run some commands:
@@ -39,6 +39,7 @@ Test
 Give it a try with a quick test run with the help of the included `test/test.json` file
 
 ```
+$ source src/clowder-config-main.sh
 $ ( ACG_CONFIG="test/test.json";  isClowderEnabled && ClowderConfigWebPort )
 ```
 
