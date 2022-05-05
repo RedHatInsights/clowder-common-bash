@@ -6,13 +6,14 @@ isClowderEnabled() {
 
     CLOWDER_CONFIG="$ACG_CONFIG"
 
-     ! [ -z "$CLOWDER_CONFIG" ] && [ -r "$CLOWDER_CONFIG" ]
+    [ -n "$CLOWDER_CONFIG" ] && [ -r "$CLOWDER_CONFIG" ]
 }
 
 _getClowderValue() {
 
     local KEY="$1"
-    local VALUE=$(jq ".$KEY" $CLOWDER_CONFIG)
+    local VALUE
+    VALUE=$(jq ".$KEY" "$CLOWDER_CONFIG")
 
     if [ -z "$VALUE" ]; then
         echo "no value found for key '$KEY'"
