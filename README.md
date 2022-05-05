@@ -36,9 +36,14 @@ $ ClowderConfigWebPort
 Test
 ----
 
-Give it a quick test run with the help of the included `test.json` file
+Give it a try with a quick test run with the help of the included `test/test.json` file
 
 ```
-$ ( ACG_CONFIG="test.json";  isClowderEnabled && ClowderConfigWebPort )
+$ ( ACG_CONFIG="test/test.json";  isClowderEnabled && ClowderConfigWebPort )
+```
 
+Or run the tests suite with:
+
+```
+./test/bats/bin/bats test
 ```

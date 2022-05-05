@@ -8,5 +8,9 @@ jobs:
     name: Shellcheck
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: ShellCheck
         uses: ludeeus/action-shellcheck@1.1.0
+        with:
+          additional_files: 'test.bats'
+          check_together: 'yes'
