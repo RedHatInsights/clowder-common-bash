@@ -1,0 +1,16 @@
+---
+version: 2
+updates:
+# update github action once a month
+- package-ecosystem: github-actions
+  directory: /
+  schedule:
+    interval: monthly
+  groups:
+    minor-actions-dependencies:
+      update-types:
+      - minor
+      - patch
+  commit-message:
+    include: scope
+    prefix: ci

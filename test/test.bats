@@ -1,7 +1,8 @@
 setup() {
-    load 'test_helper/common-setup'
-    _common_setup
-
+    export BATS_LIB_PATH="${BATS_LIB_PATH}:${PWD}/test/test_helper"
+    bats_load_library bats-support
+    bats_load_library bats-assert
+    bats_load_library bats-file
     source "src/clowder-config-main.sh"
 }
 
@@ -94,4 +95,3 @@ setup() {
     assert [ $status -eq 0 ]
     assert_output "8000"
 }
-
